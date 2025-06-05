@@ -45,3 +45,16 @@ footer {
     background-color: #004080;
     color: white;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body.dark-mode a {
+  color: #90caf9;
+}
+body.dark-mode input, body.dark-mode button {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #444;
+}
