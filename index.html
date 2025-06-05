@@ -2,179 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GlobalUnlockerPro - Unlock and check IMEI blacklist status of Apple/GSM devices. Fast worldwide service.">
-    <meta name="keywords" content="IMEI unlock, iPhone unlock, blacklist checker, mobile unlock service, GSM, factory unlock, GlobalUnlockerPro">
-    <meta name="author" content="GlobalUnlockerPro">
-    <meta name="robots" content="index, follow">
-    <meta charset="UTF-8">
-    <title>GlobalUnlockerPro | IMEI Unlock & Blacklist Checker</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-
-<!-- Google Analytics (demo ID) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX');
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GlobalUnlockerPro - IMEI Unlock Tool</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-    <div id="google_translate_element" style="position:absolute; top:10px; right:10px;"></div>
-    
-        <h1>🔓 GlobalUnlockerPro</h1>
-        <p>Unlocking & Tracking Apple/GSM Devices Worldwide</p>
-    </header>
+  <div class="container">
+    <h1>🔓 GlobalUnlockerPro</h1>
+    <p>Check your IMEI status and simulate unlocking</p>
 
-    <main>
-        <section id="imei-checker">
-            <h2>🔍 IMEI Blacklist Checker (Demo)</h2>
-            <form id="imeiForm">
-                <input type="text" id="imeiInput" placeholder="Enter your IMEI number" required>
-                <button type="submit">Check IMEI</button>
-            </form>
-            <p><strong>Note:</strong> This is a simulated demo. Results are randomized.</p>
-            <div id="imeiResult"></div>
-        </section>
+    <form id="unlockForm">
+      <input type="text" id="imei" placeholder="Enter IMEI" maxlength="15" required />
+      <select id="device">
+        <option value="Apple">Apple</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Huawei">Huawei</option>
+        <option value="Xiaomi">Xiaomi</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit">Unlock</button>
+    </form>
 
-        <section id="devices">
-            <h2>📱 Supported Devices</h2>
-            <ul>
-                <li>iPhone (All models)</li>
-                <li>Samsung Galaxy</li>
-                <li>Huawei / Honor</li>
-                <li>More coming soon...</li>
-            </ul>
-        </section>
+    <div id="result"></div>
+    <h3>History</h3>
+    <ul id="historyList"></ul>
+  </div>
 
-        <section id="services">
-            <h2>💼 Unlock Services & Pricing</h2>
-            <p>Factory Unlock - Starting at $10<br>iCloud Removal - From $25</p>
-        </section>
-
-        <section id="contact">
-            <h2>📨 Contact Us</h2>
-            <form action="mailto:rudolphgonzalez178@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message"></textarea>
-                <button type="submit">Send</button>
-            </form>
-            <p>💬 Chat with us: <a href="https://wa.me/971529042330" target="_blank">+971529042330 (WhatsApp)</a></p>
-        </section>
-    
-    <section id="usdt" class="section">
-      <h2>🔐 Buy Unlock Credits with USDT (TRC20)</h2>
-      <p>Send USDT via <strong>TRC20 network</strong> to the wallet address below to purchase unlocking credits.</p>
-      <ul>
-        <li>💰 <strong>Prices:</strong> Starting from 10 USDT (depending on device & model)</li>
-        <li>📤 <strong>Wallet:</strong> <code>TK3PwbduzupdPwNVEVkStbS8iT3xVxDnSf</code></li>
-        <li>📲 <strong>After payment:</strong> Confirm with screenshot via <a href="https://wa.me/971529042330" target="_blank">WhatsApp</a> or email <a href="mailto:rudolphgonzalez178@gmail.com">rudolphgonzalez178@gmail.com</a></li>
-      </ul>
-      <p><strong>Scan QR Code:</strong></p>
-      <img src="usdt_qr.png" alt="USDT TRC20 QR Code" style="max-width:200px;">
-    </section>
-    
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<section id="pricing" class="section">
-  <h2>💸 Unlock Pricing (USDT)</h2>
-  <table>
-    <thead>
-      <tr><th>Device</th><th>Model</th><th>Unlock Price (USDT)</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Apple</td><td>iPhone 14 Pro Max</td><td>25 USDT</td></tr>
-      <tr><td>Apple</td><td>iPhone 13</td><td>20 USDT</td></tr>
-      <tr><td>Samsung</td><td>Galaxy S22 Ultra</td><td>18 USDT</td></tr>
-      <tr><td>Huawei</td><td>P50 Pro</td><td>15 USDT</td></tr>
-      <tr><td>Xiaomi</td><td>Mi 11</td><td>12 USDT</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="terms" class="section">
-  <h2>📜 Terms of Service</h2>
-  <p>By using GlobalUnlockerPro, you agree to provide accurate device and IMEI information. We reserve the right to reject invalid or fraudulent requests.</p>
-</section>
-<section id="refund" class="section">
-  <h2>💸 Refund Policy</h2>
-  <p>Refunds are only applicable if unlocking service fails and the IMEI was valid. No refunds on wrongly submitted information.</p>
-</section>
-
-<section id="blacklist-check" class="section">
-  <h2>🔎 IMEI Blacklist Status Checker (Demo)</h2>
-  <form onsubmit="event.preventDefault(); checkBlacklist();">
-    <label for="imei">Enter IMEI Number:</label><br>
-    <input type="text" id="blacklist-imei" name="imei" required>
-    <button type="submit">Check Status</button>
-  </form>
-  <p id="blacklist-result" style="font-weight:bold;"></p>
-</section>
-<script>
-function checkBlacklist() {
-  const imei = document.getElementById('blacklist-imei').value;
-  const statuses = ['Clean', 'Lost', 'Stolen', 'Blacklisted', 'Unknown'];
-  const result = statuses[Math.floor(Math.random() * statuses.length)];
-  document.getElementById('blacklist-result').innerText = `IMEI Status: ${result}`;
-}
-</script>
-
-<section id="order-tracker" class="section">
-  <h2>📦 Unlock Submission Tracker</h2>
-  <form onsubmit="event.preventDefault(); alert('Submission received. We will contact you shortly.');">
-    <label for="name">Your Name:</label><br>
-    <input type="text" id="name" name="name" required><br>
-    <label for="order-imei">IMEI Number:</label><br>
-    <input type="text" id="order-imei" name="order-imei" required><br>
-    <label for="order-id">Order ID (if any):</label><br>
-    <input type="text" id="order-id" name="order-id"><br><br>
-    <button type="submit">Track Order</button>
-  </form>
-</section>
-</main>
-<button id="darkToggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-<script>
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-}
-</script>
-
-    
-
-    <footer>
-        <p>&copy; 2025 GlobalUnlockerPro. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.getElementById("imeiForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const imei = document.getElementById("imeiInput").value;
-            const resultBox = document.getElementById("imeiResult");
-            const status = Math.random() > 0.5 ? 
-                "✅ CLEAN - This device is not blacklisted." : 
-                "❌ BLACKLISTED - This IMEI is reported stolen or blocked.";
-            resultBox.textContent = "IMEI " + imei + ": " + status;
-            resultBox.style.color = status.includes("CLEAN") ? "green" : "red";
-        });
-    </script>
-
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    </body>
-    
+  <script src="script.js"></script>
+</body>
 </html>
