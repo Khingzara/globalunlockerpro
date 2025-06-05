@@ -1,0 +1,16 @@
+
+{
+  "name": "GlobalUnlockerPro",
+  "short_name": "UnlockerPro",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#007bff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
