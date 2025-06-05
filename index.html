@@ -9,6 +9,8 @@
 </head>
 <body>
     <header>
+    <div id="google_translate_element" style="position:absolute; top:10px; right:10px;"></div>
+    
         <h1>🔓 GlobalUnlockerPro</h1>
         <p>Unlocking & Tracking Apple/GSM Devices Worldwide</p>
     </header>
@@ -67,5 +69,13 @@
             resultBox.style.color = status.includes("CLEAN") ? "green" : "red";
         });
     </script>
-</body>
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </body>
+    
 </html>
