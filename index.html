@@ -2,79 +2,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Globalunlockerpro</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <title>GlobalUnlockerPro - IMEI Unlock & Check</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1><span class="logo-key">🔑</span> Globalunlockerpro</h1>
-        <nav>
-            <a href="#imei">IMEI Checker</a>
-            <a href="#devices">Devices</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <h1>🔓 GlobalUnlockerPro</h1>
+        <p>Unlocking & Tracking Apple/GSM Devices Worldwide</p>
     </header>
 
-    <section class="hero">
-        <h2>Unlock Your Device Instantly</h2>
-        <p>Fast, secure, and global unlocking service.</p>
-        <a href="https://wa.me/971529042330" class="btn">Chat on WhatsApp</a>
-    </section>
+    <main>
+        <section id="imei-checker">
+            <h2>🔍 IMEI Blacklist Checker (Demo)</h2>
+            <form id="imeiForm">
+                <input type="text" id="imeiInput" placeholder="Enter your IMEI number" required>
+                <button type="submit">Check IMEI</button>
+            </form>
+            <p><strong>Note:</strong> This is a simulated demo. Results are randomized.</p>
+            <div id="imeiResult"></div>
+        </section>
 
-    <section id="imei">
-        <h3>IMEI Checker</h3>
-        <form id="imeiForm">
-            <input type="text" name="imei" id="imeiInput" placeholder="Enter IMEI number" required />
-            <button type="submit">Check IMEI</button>
-        </form>
-    </section>
+        <section id="devices">
+            <h2>📱 Supported Devices</h2>
+            <ul>
+                <li>iPhone (All models)</li>
+                <li>Samsung Galaxy</li>
+                <li>Huawei / Honor</li>
+                <li>More coming soon...</li>
+            </ul>
+        </section>
 
-    <section id="devices">
-        <h3>Supported Devices</h3>
-        <ul>
-            <li>Apple (iPhone 5–15)</li>
-            <li>Samsung Galaxy Series</li>
-            <li>Huawei / Xiaomi / LG</li>
-            <li>More coming soon...</li>
-        </ul>
-    </section>
+        <section id="services">
+            <h2>💼 Unlock Services & Pricing</h2>
+            <p>Factory Unlock - Starting at $10<br>iCloud Removal - From $25</p>
+        </section>
 
-    <section id="services">
-        <h3>Unlock Services & Pricing</h3>
-        <table>
-            <tr><th>Brand</th><th>Model</th><th>Network</th><th>Price</th></tr>
-            <tr><td>Apple</td><td>iPhone 13</td><td>AT&T</td><td>$30</td></tr>
-            <tr><td>Samsung</td><td>Galaxy S21</td><td>Verizon</td><td>$25</td></tr>
-        </table>
-    </section>
-
-    <section id="contact">
-        <h3>Contact Us</h3>
-        <form action="mailto:rudolphgonzalez178@gmail.com" method="post">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+        <section id="contact">
+            <h2>📨 Contact Us</h2>
+            <form action="mailto:rudolphgonzalez178@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <p>💬 Chat with us: <a href="https://wa.me/971529042330" target="_blank">+971529042330 (WhatsApp)</a></p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Globalunlockerpro. All rights reserved.</p>
+        <p>&copy; 2025 GlobalUnlockerPro. All rights reserved.</p>
     </footer>
 
-    <a href="https://wa.me/971529042330" class="whatsapp-btn">💬</a>
-
     <script>
-    document.getElementById("imeiForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const imei = document.getElementById("imeiInput").value;
-        const googleSearchUrl = "https://www.google.com/search?q=IMEI+" + encodeURIComponent(imei);
-        window.open(googleSearchUrl, "_blank");
-    });
+        document.getElementById("imeiForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const imei = document.getElementById("imeiInput").value;
+            const resultBox = document.getElementById("imeiResult");
+            const status = Math.random() > 0.5 ? 
+                "✅ CLEAN - This device is not blacklisted." : 
+                "❌ BLACKLISTED - This IMEI is reported stolen or blocked.";
+            resultBox.textContent = "IMEI " + imei + ": " + status;
+            resultBox.style.color = status.includes("CLEAN") ? "green" : "red";
+        });
     </script>
 </body>
 </html>
