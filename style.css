@@ -11,14 +11,29 @@ header {
     color: white;
     padding: 1em;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 
+header h1 {
+    font-size: 1.5em;
+}
+
+header .logo-key {
+    margin-right: 0.5em;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 header nav a {
     color: white;
-    margin: 0 10px;
     text-decoration: none;
+    padding: 5px 10px;
 }
 
 .hero {
@@ -35,6 +50,8 @@ header nav a {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    display: inline-block;
+    margin-top: 1em;
 }
 
 section {
@@ -54,11 +71,14 @@ form button {
     background: #005fa3;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
 }
 
 table, th, td {
@@ -84,4 +104,12 @@ footer {
     padding: 12px;
     border-radius: 50%;
     text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

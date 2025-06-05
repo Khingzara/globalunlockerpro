@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Globalunlockerpro</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
     <header>
-        <h1>Globalunlockerpro</h1>
+        <h1><span class="logo-key">🔑</span> Globalunlockerpro</h1>
         <nav>
             <a href="#imei">IMEI Checker</a>
-            <a href="#devices">Supported Devices</a>
+            <a href="#devices">Devices</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -26,8 +27,8 @@
 
     <section id="imei">
         <h3>IMEI Checker</h3>
-        <form action="mailto:your@email.com" method="post">
-            <input type="text" name="imei" placeholder="Enter IMEI number" required />
+        <form id="imeiForm">
+            <input type="text" name="imei" id="imeiInput" placeholder="Enter IMEI number" required />
             <button type="submit">Check IMEI</button>
         </form>
     </section>
@@ -66,5 +67,14 @@
     </footer>
 
     <a href="https://wa.me/yourwhatsapplink" class="whatsapp-btn">💬</a>
+
+    <script>
+    document.getElementById("imeiForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const imei = document.getElementById("imeiInput").value;
+        const googleSearchUrl = "https://www.google.com/search?q=IMEI+" + encodeURIComponent(imei);
+        window.open(googleSearchUrl, "_blank");
+    });
+    </script>
 </body>
 </html>
