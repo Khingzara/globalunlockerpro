@@ -1,171 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlobalUnlockerPro</title>
 
-  <meta name="description" content="GlobalUnlockerPro - Instantly check IMEI, unlock GSM/Apple devices, and pay securely via USDT.">
-  <meta name="keywords" content="IMEI checker, phone unlock, GSM unlock, Apple unlock, USDT unlock service, mobile unlocking, GlobalUnlockerPro">
-  <meta name="author" content="GlobalUnlockerPro">
-  <meta property="og:title" content="GlobalUnlockerPro - IMEI Unlocking Tool" />
-  <meta property="og:description" content="Check IMEI and unlock GSM/Apple devices securely with USDT. Multilingual support." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://khingzara.github.io" />
-  <meta property="og:image" content="https://khingzara.github.io/logo.png" />
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GlobalUnlockerPro - IMEI Unlock Tool</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <meta name="description" content="IMEI checking and unlocking tool for Apple and GSM devices. Mobile friendly and crypto-enabled.">
-  <meta name="keywords" content="IMEI, Unlock, GSM, Apple, Mobile, Checker, USDT, TRC20, GlobalUnlockerPro">
-  <meta name="theme-color" content="#007bff">
-
-  <!-- Google Translate -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#007bff">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('Service Worker registered!', reg))
-        .catch(err => console.log('Service Worker registration failed:', err));
-    }
-  </script>
-</head>
-
-<body>
-  <div class="container">
-    <div id="google_translate_element" style="text-align:right;"></div>
-    <h1>🔓 GlobalUnlockerPro</h1>
-    <p>Check your IMEI status and simulate unlocking</p>
-
-    <form id="unlockForm">
-      <input type="text" id="imei" placeholder="Enter IMEI" maxlength="15" required />
-      <select id="device">
-        <option value="Apple">Apple</option>
-        <option value="Samsung">Samsung</option>
-        <option value="Huawei">Huawei</option>
-        <option value="Xiaomi">Xiaomi</option>
-        <option value="Other">Other</option>
-      </select>
-      <button type="submit">Unlock</button>
-    </form>
-
-    <div id="result"></div>
-
-    <h3>History</h3>
-    <ul id="historyList"></ul>
-
-    <h3>🔐 Unlock Credit Pricing (USDT)</h3>
-    <ul class="pricing">
-      <li>Apple Unlock - 15 USDT</li>
-      <li>Samsung Unlock - 10 USDT</li>
-      <li>Huawei Unlock - 8 USDT</li>
-      <li>Other - 5 USDT</li>
-    </ul>
-    <p>Pay to: <strong>USDT TRC20</strong> wallet address:<br>
-    <code>TK3PwbduzupdPwNVEVkStbS8iT3xVxDnSf</code></p>
-
-    <p><a href="terms.html">Terms of Service</a> | <a href="refund.html">Refund Policy</a></p>
-  </div>
-  <script src="script.js"></script>
-
-<section id="unlock-form" style="margin-top:40px;">
-  <h2>Submit Unlock Request</h2>
-  <form id="submitForm">
-    <input type="text" placeholder="Full Name" required id="clientName"><br><br>
-    <input type="text" placeholder="IMEI Number" required id="imeiNumber"><br><br>
-    <input type="text" placeholder="Device Model" required id="deviceModel"><br><br>
-    <input type="text" placeholder="Country" required id="country"><br><br>
-    <textarea placeholder="Notes" id="notes"></textarea><br><br>
-    <button type="submit">Submit Request</button>
-  </form>
-</section>
-
-<section id="admin-log" style="margin-top:40px;">
-  <h2>Admin Unlock Logs</h2>
-  <table border="1" width="100%" id="logTable">
-    <thead>
-      <tr>
-        <th>Name</th><th>IMEI</th><th>Model</th><th>Country</th><th>Notes</th><th>Date</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</section>
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWES3HS3EV"></script>
 <script>
-document.getElementById("submitForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const entry = {
-    name: document.getElementById("clientName").value,
-    imei: document.getElementById("imeiNumber").value,
-    model: document.getElementById("deviceModel").value,
-    country: document.getElementById("country").value,
-    notes: document.getElementById("notes").value,
-    date: new Date().toLocaleString()
-  };
-  let logs = JSON.parse(localStorage.getItem("unlockLogs") || "[]");
-  logs.push(entry);
-  localStorage.setItem("unlockLogs", JSON.stringify(logs));
-  alert("Request submitted (Demo)");
-  populateTable();
-  document.getElementById("submitForm").reset();
-});
-
-function populateTable() {
-  let logs = JSON.parse(localStorage.getItem("unlockLogs") || "[]");
-  const tbody = document.getElementById("logTable").querySelector("tbody");
-  tbody.innerHTML = "";
-  logs.forEach(log => {
-    const row = `<tr>
-      <td>${log.name}</td>
-      <td>${log.imei}</td>
-      <td>${log.model}</td>
-      <td>${log.country}</td>
-      <td>${log.notes}</td>
-      <td>${log.date}</td>
-    </tr>`;
-    tbody.innerHTML += row;
-  });
-}
-populateTable();
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LWES3HS3EV');
 </script>
-
-
-<section id="payment" style="margin-top: 40px; text-align: center;">
-  <h2>USDT (TRC20) Payment</h2>
-  <p>Please send payment before unlocking your device. Use the wallet address below or scan the QR code.</p>
-  <img src="usdt_trc20_qr.png" alt="USDT QR" width="200" height="200"><br>
-  <strong>Wallet Address:</strong><br>
-  <code>TK3PwbduzupdPwNVEVkStbS8iT3xVxDnSf</code>
-</section>
-
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/971529042330" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; font-size: 28px;">
-  &#128172;
-</a>
-
-
-<div id="google_translate_element" style="position: fixed; top: 10px; left: 10px; z-index: 999;"></div>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,es,fr,de,ar,pt,zh-CN,ru,ja,hi',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+</head>
+<body>
+<h1>Welcome to GlobalUnlockerPro</h1>
+<p>Your #1 source for IMEI checking and device unlocking.</p>
 </body>
 </html>
+
