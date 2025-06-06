@@ -66,5 +66,68 @@
     <p><a href="terms.html">Terms of Service</a> | <a href="refund.html">Refund Policy</a></p>
   </div>
   <script src="script.js"></script>
+
+<section id="unlock-form" style="margin-top:40px;">
+  <h2>Submit Unlock Request</h2>
+  <form id="submitForm">
+    <input type="text" placeholder="Full Name" required id="clientName"><br><br>
+    <input type="text" placeholder="IMEI Number" required id="imeiNumber"><br><br>
+    <input type="text" placeholder="Device Model" required id="deviceModel"><br><br>
+    <input type="text" placeholder="Country" required id="country"><br><br>
+    <textarea placeholder="Notes" id="notes"></textarea><br><br>
+    <button type="submit">Submit Request</button>
+  </form>
+</section>
+
+<section id="admin-log" style="margin-top:40px;">
+  <h2>Admin Unlock Logs</h2>
+  <table border="1" width="100%" id="logTable">
+    <thead>
+      <tr>
+        <th>Name</th><th>IMEI</th><th>Model</th><th>Country</th><th>Notes</th><th>Date</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<script>
+document.getElementById("submitForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const entry = {
+    name: document.getElementById("clientName").value,
+    imei: document.getElementById("imeiNumber").value,
+    model: document.getElementById("deviceModel").value,
+    country: document.getElementById("country").value,
+    notes: document.getElementById("notes").value,
+    date: new Date().toLocaleString()
+  };
+  let logs = JSON.parse(localStorage.getItem("unlockLogs") || "[]");
+  logs.push(entry);
+  localStorage.setItem("unlockLogs", JSON.stringify(logs));
+  alert("Request submitted (Demo)");
+  populateTable();
+  document.getElementById("submitForm").reset();
+});
+
+function populateTable() {
+  let logs = JSON.parse(localStorage.getItem("unlockLogs") || "[]");
+  const tbody = document.getElementById("logTable").querySelector("tbody");
+  tbody.innerHTML = "";
+  logs.forEach(log => {
+    const row = `<tr>
+      <td>${log.name}</td>
+      <td>${log.imei}</td>
+      <td>${log.model}</td>
+      <td>${log.country}</td>
+      <td>${log.notes}</td>
+      <td>${log.date}</td>
+    </tr>`;
+    tbody.innerHTML += row;
+  });
+}
+populateTable();
+</script>
+
 </body>
 </html>
